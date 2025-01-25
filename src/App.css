@@ -102,7 +102,7 @@
 }
 
 .inventory-table tr:hover {
-  background-color: rgba(18, 87, 101, 0.1);
+  background-color: rgba(122, 178, 189, 0.1);
 }
 
 .inventory-table button {
@@ -113,6 +113,7 @@
   color: white;
   background-color: rgba(18, 87, 101, 0.8);
   cursor: pointer;
+  margin: 0 10px;
 }
 
 .inventory-table button:hover {
