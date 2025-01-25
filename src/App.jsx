@@ -31,11 +31,14 @@ function App() {
     };
 
     if (editIndex !== null) {
-      items[editIndex] = newItem;
-      setItems([...items]);
+      setItems((prevItems) =>
+        prevItems.map((item, index) =>
+          index === editIndex ? newItem : item
+        )
+      );
       setEditIndex(null);
     } else {
-      setItems([...items, newItem]);
+      setItems((prevItems) => [...prevItems, newItem]);
     }
 
     setItemName("");
@@ -44,8 +47,7 @@ function App() {
   };
 
   const deleteItem = (index) => {
-    const updatedItems = items.filter((_, i) => i !== index);
-    setItems(updatedItems);
+    setItems((prevItems) => prevItems.filter((_, i) => i !== index));
   };
 
   const editItem = (index) => {
